@@ -1,0 +1,84 @@
+parked Blackbird
+parked Dreamliner
+parked Tesla
+Blackbird [0/8] [0.00/52.50] [0.00] ()
+Dreamliner [0/2552] [0.00/2500.30] [0.00] ()
+Tesla [0/68] [0.00/68.30] [0.00] ()
+loaded apple onto Blackbird
+loaded apple onto Blackbird
+loaded apple onto Blackbird
+Blackbird [3/8] [1.20/52.50] [0.00] (apple,apple,apple)
+Dreamliner [0/2552] [0.00/2500.30] [0.00] ()
+Tesla [0/68] [0.00/68.30] [0.00] ()
+parked Ford
+parked Chevy
+Blackbird [3/8] [1.20/52.50] [0.00] (apple,apple,apple)
+Dreamliner [0/2552] [0.00/2500.30] [0.00] ()
+Tesla [0/68] [0.00/68.30] [0.00] ()
+Ford [0/150] [0.00/255.23] [0.00] ()
+Chevy [0/187] [0.00/199.99] [0.00] ()
+loaded orange onto Blackbird
+loaded orange onto Blackbird
+loaded orange onto Dreamliner
+loaded orange onto Dreamliner
+unloaded from Blackbird
+unload failed
+loaded orange onto Dreamliner
+loaded orange onto Dreamliner
+loaded orange onto Dreamliner
+loaded orange onto Dreamliner
+loaded orange onto Dreamliner
+loaded orange onto Dreamliner
+traveled
+loaded orange onto Dreamliner
+loaded apple onto Dreamliner
+unload failed
+loaded apple onto Dreamliner
+loaded apple onto Dreamliner
+loaded orange onto Dreamliner
+loaded orange onto Dreamliner
+traveled
+loaded orange onto Dreamliner
+loaded orange onto Dreamliner
+loaded orange onto Tesla
+loaded apple onto Tesla
+loaded apple onto Tesla
+loaded apple onto Tesla
+loaded apple onto Tesla
+loaded orange onto Tesla
+loaded grape onto Chevy
+loaded grape onto Chevy
+loaded canteloupe onto Ford
+loaded canteloupe onto Ford
+loaded canteloupe onto Chevy
+Blackbird [0/8] [0.00/52.50] [1600.20] ()
+Dreamliner [16/2552] [8.42/2500.30] [1264.31] (orange,orange,orange,orange,orange,orange,orange,orange,orange,apple,apple,apple,orange,orange,orange,orange)
+Tesla [6/68] [5.42/68.30] [390.00] (orange,apple,apple,apple,apple,orange)
+Ford [2/150] [40.80/255.23] [200.00] (canteloupe,canteloupe)
+Chevy [3/187] [72.02/199.99] [254.68] (grape,grape,canteloupe)
+traveled
+traveled
+traveled
+traveled
+traveled
+traveled
+traveled
+traveled
+Blackbird [0/8] [0.00/52.50] [8001.00] ()
+Dreamliner [16/2552] [8.42/2500.30] [6317.49] (orange,orange,orange,orange,orange,orange,orange,orange,orange,apple,apple,apple,orange,orange,orange,orange)
+Tesla [6/68] [5.42/68.30] [1950.00] (orange,apple,apple,apple,apple,orange)
+Ford [2/150] [40.80/255.23] [951.04] (canteloupe,canteloupe)
+Chevy [3/187] [72.02/199.99] [1186.98] (grape,grape,canteloupe)
+unload failed
+unload failed
+unloaded from Dreamliner
+unloaded from Dreamliner
+unloaded from Ford
+unloaded from Chevy
+unloaded from Tesla
+unloaded from Dreamliner
+Blackbird [0/8] [0.00/52.50] [8001.00] ()
+Dreamliner [1/2552] [0.56/2500.30] [6317.49] (orange)
+Tesla [5/68] [4.31/68.30] [1950.00] (orange,apple,apple,apple,apple)
+Ford [0/150] [-0.00/255.23] [951.04] ()
+Chevy [1/187] [0.01/199.99] [1186.98] (grape)

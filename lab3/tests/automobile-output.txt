@@ -1,0 +1,33 @@
+parked Lamborghini
+parked Honda
+parked Tesla
+loaded apple onto Lamborghini
+loaded apple onto Lamborghini
+loaded apple onto Lamborghini
+loaded orange onto Lamborghini
+loaded orange onto Lamborghini
+loaded apple onto Honda
+loaded orange onto Honda
+loaded orange onto Tesla
+loaded orange onto Tesla
+loaded apple onto Tesla
+loaded apple onto Tesla
+Lamborghini [5/50] [4.62/55.55] [0.00] (apple,apple,apple,orange,orange)
+Honda [2/80] [1.91/70.23] [0.00] (apple,orange)
+Tesla [4/68] [3.82/68.30] [0.00] (orange,orange,apple,apple)
+traveled
+traveled
+Lamborghini [5/50] [4.62/55.55] [441.02] (apple,apple,apple,orange,orange)
+Honda [2/80] [1.91/70.23] [163.98] (apple,orange)
+Tesla [4/68] [3.82/68.30] [390.00] (orange,orange,apple,apple)
+unloaded from Lamborghini
+unloaded from Lamborghini
+unloaded from Honda
+unloaded from Honda
+unloaded from Tesla
+unloaded from Tesla
+unloaded from Tesla
+unload failed
+Lamborghini [3/50] [2.40/55.55] [441.02] (apple,apple,apple)
+Honda [0/80] [0.00/70.23] [163.98] ()
+Tesla [1/68] [1.11/68.30] [390.00] (orange)

@@ -1,0 +1,52 @@
+parked Ford
+parked Chevy
+parked Tesla
+loaded apple onto Ford
+loaded apple onto Ford
+loaded apple onto Ford
+loaded apple onto Ford
+loaded apple onto Ford
+loaded apple onto Ford
+loaded apple onto Ford
+loaded orange onto Ford
+loaded orange onto Ford
+loaded orange onto Chevy
+loaded apple onto Chevy
+loaded apple onto Chevy
+loaded apple onto Chevy
+loaded orange onto Chevy
+loaded orange onto Chevy
+loaded orange onto Chevy
+loaded orange onto Chevy
+loaded orange onto Tesla
+loaded orange onto Tesla
+Ford [9/150] [6.26/255.23] [0.00] (apple,apple,apple,apple,apple,apple,apple,orange,orange)
+Chevy [8/187] [6.36/199.99] [0.00] (orange,apple,apple,apple,orange,orange,orange,orange)
+Tesla [2/145] [1.78/231.00] [0.00] (orange,orange)
+traveled
+traveled
+traveled
+Ford [9/150] [6.26/255.23] [297.18] (apple,apple,apple,apple,apple,apple,apple,orange,orange)
+Chevy [8/187] [6.36/199.99] [379.16] (orange,apple,apple,apple,orange,orange,orange,orange)
+Tesla [2/145] [1.78/231.00] [602.80] (orange,orange)
+traveled
+traveled
+traveled
+traveled
+traveled
+traveled
+traveled
+Ford [9/150] [6.26/255.23] [990.62] (apple,apple,apple,apple,apple,apple,apple,orange,orange)
+Chevy [8/187] [6.36/199.99] [1263.86] (orange,apple,apple,apple,orange,orange,orange,orange)
+Tesla [2/145] [1.78/231.00] [2009.34] (orange,orange)
+unloaded from Ford
+unloaded from Ford
+unloaded from Chevy
+unloaded from Chevy
+unloaded from Tesla
+unload failed
+unload failed
+unloaded from Chevy
+Ford [5/150] [3.20/255.23] [990.62] (apple,apple,apple,apple,apple)
+Chevy [2/187] [1.53/199.99] [1263.86] (orange,apple)
+Tesla [0/145] [0.00/231.00] [2009.34] ()

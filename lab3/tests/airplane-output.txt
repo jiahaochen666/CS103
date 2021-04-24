@@ -1,0 +1,64 @@
+parked Blackbird
+parked Dreamliner
+parked Airbus
+loaded apple onto Blackbird
+loaded apple onto Blackbird
+loaded apple onto Blackbird
+loaded apple onto Blackbird
+loaded apple onto Blackbird
+loaded orange onto Blackbird
+loaded orange onto Blackbird
+loaded orange onto Dreamliner
+loaded orange onto Dreamliner
+loaded orange onto Dreamliner
+loaded orange onto Dreamliner
+loaded orange onto Dreamliner
+loaded orange onto Dreamliner
+loaded orange onto Dreamliner
+loaded orange onto Dreamliner
+loaded orange onto Dreamliner
+loaded orange onto Dreamliner
+loaded orange onto Dreamliner
+loaded apple onto Dreamliner
+loaded apple onto Dreamliner
+loaded apple onto Dreamliner
+loaded orange onto Dreamliner
+loaded orange onto Dreamliner
+loaded orange onto Dreamliner
+loaded orange onto Dreamliner
+loaded orange onto Airbus
+loaded apple onto Airbus
+loaded apple onto Airbus
+loaded apple onto Airbus
+loaded apple onto Airbus
+loaded orange onto Airbus
+Blackbird [7/8] [3.11/52.50] [0.00] (apple,apple,apple,apple,apple,orange,orange)
+Dreamliner [18/2552] [9.53/2500.30] [0.00] (orange,orange,orange,orange,orange,orange,orange,orange,orange,orange,orange,apple,apple,apple,orange,orange,orange,orange)
+Airbus [6/1998] [2.71/2474.95] [0.00] (orange,apple,apple,apple,apple,orange)
+traveled
+traveled
+traveled
+Blackbird [7/8] [3.11/52.50] [2398.43] (apple,apple,apple,apple,apple,orange,orange)
+Dreamliner [18/2552] [9.53/2500.30] [1894.28] (orange,orange,orange,orange,orange,orange,orange,orange,orange,orange,orange,apple,apple,apple,orange,orange,orange,orange)
+Airbus [6/1998] [2.71/2474.95] [2128.37] (orange,apple,apple,apple,apple,orange)
+traveled
+traveled
+traveled
+traveled
+traveled
+traveled
+traveled
+Blackbird [7/8] [3.11/52.50] [7994.78] (apple,apple,apple,apple,apple,orange,orange)
+Dreamliner [18/2552] [9.53/2500.30] [6314.25] (orange,orange,orange,orange,orange,orange,orange,orange,orange,orange,orange,apple,apple,apple,orange,orange,orange,orange)
+Airbus [6/1998] [2.71/2474.95] [7094.58] (orange,apple,apple,apple,apple,orange)
+unloaded from Blackbird
+unload failed
+unloaded from Dreamliner
+unloaded from Dreamliner
+unloaded from Airbus
+unload failed
+unload failed
+unloaded from Dreamliner
+Blackbird [2/8] [0.80/52.50] [7994.78] (apple,apple)
+Dreamliner [3/2552] [1.67/2500.30] [6314.25] (orange,orange,orange)
+Airbus [1/1998] [0.55/2474.95] [7094.58] (orange)

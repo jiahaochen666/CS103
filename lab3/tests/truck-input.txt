@@ -1,0 +1,44 @@
+v t Ford 100 255.23 100
+v t Chevy 127.34 199.99 125
+v t Tesla 201.2 231 97
+l 0 apple 0.8
+l 0 apple 0.8
+l 0 apple 0.8
+l 0 apple 0.8
+l 0 apple 0.8
+l 0 apple 0.8
+l 0 apple 0.8
+l 0 orange 1.11
+l 0 orange 1.11
+l 1 orange 1.11
+l 1 apple 0.8
+l 1 apple 0.8
+l 1 apple 0.8
+l 1 orange 1.11
+l 1 orange 1.11
+l 1 orange 1.11
+l 1 orange 1.11
+l 2 orange 1.11
+l 2 orange 1.11
+p
+t
+t
+t
+p
+t
+t
+t
+t
+t
+t
+t
+p
+u 0
+u 0
+u 1
+u 1
+u 2 
+u 2
+u 2
+u 1
+p
