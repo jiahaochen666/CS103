@@ -24,7 +24,6 @@ int main(int argc, char* argv[]) {
         r = rand() % n;
         maps[0].connect_left(i, l);
         maps[0].connect_right(i, r);
-        std::cout << i << l << r << std::endl;
     }
 
 

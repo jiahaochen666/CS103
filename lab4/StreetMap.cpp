@@ -66,10 +66,10 @@ StreetMap::~StreetMap() {
 
 StreetNode *StreetMap::get_street(StreetNode *head, int i) {
     StreetNode* cur = head;
-    while (cur) {
-        if (cur->id == i)
-            break;
+    int counter = 0;
+    while (counter < i) {
         cur = cur->next;
+        counter++;
     }
     return cur;
 }
