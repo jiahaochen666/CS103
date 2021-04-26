@@ -1,0 +1,4 @@
+char
+short int[5]
+int[5][10]
+long int[5][10][20]

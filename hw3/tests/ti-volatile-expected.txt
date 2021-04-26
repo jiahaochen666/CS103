@@ -1,0 +1,4 @@
+char volatile
+short int volatile
+int volatile
+long int volatile

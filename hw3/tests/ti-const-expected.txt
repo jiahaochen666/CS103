@@ -1,0 +1,4 @@
+char const
+short int const
+int const
+long int const

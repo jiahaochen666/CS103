@@ -1,0 +1,4 @@
+char * &
+short int const * const
+int const *
+long int * const
