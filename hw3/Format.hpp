@@ -11,6 +11,7 @@ class format_error : public std::logic_error
   public:
     format_error() : logic_error{"Invalid format."}
     {
+
     }
 };
 
