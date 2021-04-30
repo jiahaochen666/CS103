@@ -1,7 +1,9 @@
 #include <cerrno>
-#include <cmath>
 #include <cstdlib>
 #include <iostream>
+#include "geometry/Point.h"
+#include "geometry/Ray.h"
+#include "geometry/Vector.h"
 
 using namespace std;
 
@@ -36,18 +38,16 @@ int main(int argc, char *argv[]) {
     double viewport_shift{1 - 1. / resolution};
 
     // The camera is located at (x=0;y=0;z=5).
-    double camera[3]{0, 0, 5};
+    Point camera{0, 0, 5};
 
     // And there is a sphere at (0;0;-5) with radius 1.
-    double sphere[3]{0, 0, -5};
+    Point sphere{0, 0, -5};
     int radius = 1;
 
-    // To compute intersections, consider this article:
-    // http://viclw17.github.io/2018/07/16/raytracing-ray-sphere-intersection/
-    // delta_{x,y,z} is the vector A-C
-    double delta[3]{camera[0] - sphere[0],
-                    camera[1] - sphere[1],
-                    camera[2] - sphere[2]};
+//     To compute intersections, consider this article:
+//     http://viclw17.github.io/2018/07/16/raytracing-ray-sphere-intersection/
+//     delta_{x,y,z} is the vector A-C
+    Vector delta = camera - sphere;
 
     for (int y_pixel = 0; y_pixel < resolution; ++y_pixel) {
         // To get the ray, we need the viewport coordinates. This is the y coordinate...
@@ -57,28 +57,15 @@ int main(int argc, char *argv[]) {
             double viewport_x_coordinate{x_pixel * viewport_scale_factor - viewport_shift};
 
             // Now we get the vector from the camera to the viewport.
-            double ray_direction[3]{viewport_x_coordinate - camera[0],
-                                    viewport_y_coordinate - camera[1],
-                                    -camera[2]};
+            Vector ray_direction = camera.get_ray_direction(viewport_x_coordinate, viewport_y_coordinate);
             // And we want to make sure to normalize the ray we want to trace to a length of 1, because this will
             // simplify many computations.
-            double ray_length = sqrt(ray_direction[0] * ray_direction[0] +
-                                     ray_direction[1] * ray_direction[1] +
-                                     ray_direction[2] * ray_direction[2]);
-            ray_direction[0] /= ray_length;
-            ray_direction[1] /= ray_length;
-            ray_direction[2] /= ray_length;
+            ray_direction.normalize();
 
             // Now we can use the formula from the link to calculate b and c. Note that we can omit a, because
             // ray.dot(ray)=1. This is, because we normalized it.
-            double b{(delta[0] * ray_direction[0] +
-                      delta[1] * ray_direction[1] +
-                      delta[2] * ray_direction[2]) *
-                     2};
-            double c{(delta[0] * delta[0] +
-                      delta[1] * delta[1] +
-                      delta[2] * delta[2]) -
-                     radius * radius};
+            double b = delta.dot(ray_direction) * 2;
+            double c = delta.dot(delta) - radius * radius;
 
             // If there is an intersection, the discriminant >= 0, so we emit 1, to indicate full brightness, otherwise
             // 0 to indicate black.
