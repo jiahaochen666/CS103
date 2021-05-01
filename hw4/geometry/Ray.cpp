@@ -3,3 +3,8 @@
 //
 
 #include "Ray.h"
+
+Ray::Ray(Point start, Vector direction) {
+    this->start = start;
+    this->direction = direction;
+}

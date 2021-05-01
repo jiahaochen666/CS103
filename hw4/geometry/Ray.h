@@ -8,9 +8,11 @@
 #include "Point.h"
 #include "Vector.h"
 class Ray {
-private:
-    Point start;
-    Vector direction;
+public:
+    Point start{};
+    Vector direction{};
+public:
+    Ray(Point, Vector);
 };
 
 

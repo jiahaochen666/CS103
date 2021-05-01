@@ -8,13 +8,15 @@
 #include "../geometry/Point.h"
 #include "../geometry/Ray.h"
 #include "../geometry/Vector.h"
+#include <vector>
 
 class Sphere {
 private:
     Point center;
-    double radius;
+    int radius;
 public:
-    Vector intersections(Ray ray);
+    Sphere(Point, int );
+    std::vector<double> intersections(Ray& ray);
 };
 
 

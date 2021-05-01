@@ -5,9 +5,13 @@
 #ifndef HW4_PGMOUT_H
 #define HW4_PGMOUT_H
 
+#include <vector>
+#include <iostream>
 
 class PGMOut {
-
+public:
+    PGMOut() = default;
+    static void save(const std::vector<std::vector<int>>&);
 };
 
 
