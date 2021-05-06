@@ -12,7 +12,9 @@ Plane::Plane(Point point, Vector vector) {
 
 std::vector<Intersection> Plane::intersections(Ray &ray) {
     double vd = ray.direction.dot(this->normal_vector);
-    double dist = (vd != 0) ? -(this->normal_vector.dot(Point{0,0,0} - ray.start) + this->distance) / vd : -1;
+    if(vd == 0)
+        return {};
+    double dist = -(this->normal_vector.dot(Point{0,0,0} - ray.start) + this->distance) / vd;
     Point intersection = ray.start + ray.direction * dist;
-    return std::vector<Intersection>{Intersection{*this, dist, intersection}};
+    return std::vector<Intersection>{Intersection{this, dist, intersection}};
 }

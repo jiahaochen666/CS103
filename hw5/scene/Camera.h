@@ -16,6 +16,7 @@ private:
 public:
     Camera() = default;
     Camera(Point, Point, double, double);
+    Camera(const Camera&);
     Ray get_ray(double, double);
 };
 

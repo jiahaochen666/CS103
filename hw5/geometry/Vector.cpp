@@ -4,13 +4,14 @@
 
 #include "Vector.h"
 
-void Vector::normalize() {
+Vector Vector::normalize() {
     double ray_length = sqrt(this->pos_x * this->pos_x +
                              this->pos_y * this->pos_y +
                              this->pos_z * this->pos_z);
     this->pos_x /= ray_length;
     this->pos_y /= ray_length;
     this->pos_z /= ray_length;
+    return *this;
 }
 
 double Vector::dot(Vector other) {

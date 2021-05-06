@@ -8,7 +8,7 @@
 
 struct Vector {
     double pos_x, pos_y, pos_z;
-    void normalize();
+    Vector normalize();
     double dot(Vector);
     Vector operator*(double) const;
     Vector operator+(Vector) const;

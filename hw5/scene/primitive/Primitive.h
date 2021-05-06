@@ -11,6 +11,8 @@
 #include "Intersection.h"
 #include <vector>
 
+struct Intersection;
+
 class Primitive {
 public:
     virtual std::vector<Intersection> intersections(Ray& ray) = 0;

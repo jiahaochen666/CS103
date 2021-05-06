@@ -6,12 +6,15 @@
 #define HW4_RAYTRACER_H
 
 #include "../image/PGMOut.h"
-#include "../scene/primitive/Sphere.h"
+#include "../scene/Camera.h"
+#include "../scene/Scene.h"
 
 
 class Raytracer {
+private:
+    Scene* scene;
 public:
-    Raytracer() = default;
+    explicit Raytracer(Scene&& scene);
     std::vector<std::vector<int>> to_raster(int resolution);
 };
 

@@ -4,6 +4,10 @@
 
 #include "Raytracer.h"
 
+Raytracer::Raytracer(Scene &&scene) {
+    this->scene = &scene;
+}
+
 std::vector<std::vector<int>> Raytracer::to_raster(int resolution) {
     std::cout << "P2\n"; // Magic PBM bytes
     std::cout << resolution << ' ' << resolution << '\n';
@@ -31,12 +35,6 @@ std::vector<std::vector<int>> Raytracer::to_raster(int resolution) {
     double viewport_scale_factor{resolution == 1 ? 1 : 2. / resolution};
     double viewport_shift{1 - 1. / resolution};
 
-    // The camera is located at (x=0;y=0;z=5).
-    Point camera{0, 0, 5};
-
-    // And there is a sphere at (0;0;-5) with radius 1.
-    int radius = 1;
-    Sphere sphere{{0, 0, -5}, radius};
     std::vector<std::vector<int>> out(resolution, std::vector<int>(resolution, 0));
 
 //     To compute intersections, consider this article:
@@ -47,31 +45,21 @@ std::vector<std::vector<int>> Raytracer::to_raster(int resolution) {
         double viewport_y_coordinate{y_pixel * viewport_scale_factor - viewport_shift};
         for (int x_pixel = 0; x_pixel < resolution; ++x_pixel) {
             // ... and the x coordinate.
-
             double viewport_x_coordinate{x_pixel * viewport_scale_factor - viewport_shift};
-
-            // Now we get the vector from the camera to the viewport.
-            Vector ray_direction = camera.get_ray_direction(viewport_x_coordinate, viewport_y_coordinate);
-            // And we want to make sure to normalize the ray we want to trace to a length of 1, because this will
-            // simplify many computations.
-            ray_direction.normalize();
-
-            Ray ray{camera, ray_direction};
-
-            std::vector<double> intersect = sphere.intersections(ray);
+            Ray ray = this->scene->camera.get_ray(viewport_x_coordinate, viewport_y_coordinate);
             // Now we can use the formula from the link to calculate b and c. Note that we can omit a, because
             // ray.dot(ray)=1. This is, because we normalized it.
 
             // If there is an intersection, the discriminant >= 0, so we emit 1, to indicate full brightness, otherwise
             // 0 to indicate black.
-
-            if (intersect[0] >= 0 && intersect[1] >= 0) {
-                double smallest = intersect[0] < intersect[1] ? intersect[0] : intersect[1];
-                double brightness = 10 - smallest;
-                if (brightness < 0) brightness = 0;
-                int pixel_brightness = static_cast<int>(brightness * 255);
-                out[x_pixel][y_pixel] = pixel_brightness;
+            std::vector<Intersection> inter = this->scene->find_intersection(ray);
+            int brightness = 0;
+            if (!inter.empty()) {
+                double distance = inter[0].distance;
+                distance = distance < 1 ? 1 : distance;
+                brightness =static_cast<int>(1 / sqrt(distance) * 255);
             }
+            out[x_pixel][y_pixel] = brightness;
         }
     }
     return out;
