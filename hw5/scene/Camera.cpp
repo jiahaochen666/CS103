@@ -3,6 +3,7 @@
 //
 
 #include "Camera.h"
+#include "iostream"
 
 Camera::Camera(Point pos, Point center, double height, double width) {
     this->cam_pos = pos;
@@ -12,7 +13,8 @@ Camera::Camera(Point pos, Point center, double height, double width) {
 }
 
 Ray Camera::get_ray(double horizon, double vertical) {
-    return Ray(this->cam_pos, view_vector + this->view_right * horizon + this->view_up * vertical);
+    //std::cout << view_right.pos_x << view_right.pos_y << view_right.pos_z << "\n";
+    return Ray(this->cam_pos, (view_vector + this->view_right * horizon + this->view_up * vertical).normalize());
 }
 Camera::Camera(const Camera &other) {
     this->cam_pos = other.cam_pos;

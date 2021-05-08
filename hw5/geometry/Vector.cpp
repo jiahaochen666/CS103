@@ -24,7 +24,7 @@ Vector Vector::operator*(double d) const {
 
 Vector Vector::cross(Vector other) {
     return Vector{this->pos_y * other.pos_z - this->pos_z * other.pos_y,
-                  this->pos_x * other.pos_z - this->pos_z - other.pos_x,
+                  this->pos_x * other.pos_z - this->pos_z * other.pos_x,
                   this->pos_x * other.pos_y - this->pos_y * other.pos_x};
 }
 

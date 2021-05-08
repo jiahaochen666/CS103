@@ -67,14 +67,14 @@ Scene::~Scene() {
 
 std::vector<Intersection> Scene::find_intersection(Ray& ray) {
     double distance = std::numeric_limits<double>::max();
-    Intersection closest;
+    Intersection closest{};
     int check = 0;
     for(auto* object: this->objects){
         std::vector<Intersection> temp = object->intersections(ray);
         if(!temp.empty()){
             for(auto inter: temp){
-                if (distance > std::abs(inter.distance)){
-                    distance = std::abs(inter.distance);
+                if (distance > inter.distance){
+                    distance = inter.distance;
                     closest = inter;
                 }
             }
@@ -82,6 +82,7 @@ std::vector<Intersection> Scene::find_intersection(Ray& ray) {
         else
             check++;
     }
+    //std::cout << distance << "\n";
     return check != this->objects.size() ?  std::vector<Intersection>{closest} : std::vector<Intersection>{};
 }
 

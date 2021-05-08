@@ -4,7 +4,7 @@
 
 #include "Point.h"
 
-Vector Point::operator-(Point &other) {
+Vector Point::operator-(Point other) {
     return Vector{
             this->pos_x - other.pos_x,
             this->pos_y - other.pos_y,

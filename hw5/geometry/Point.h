@@ -9,7 +9,7 @@
 
 struct Point {
     double pos_x, pos_y, pos_z;
-    Vector operator-(Point& other);
+    Vector operator-(Point other);
     Vector get_ray_direction(double x, double y) const;
     Point operator+(Vector other);
 };

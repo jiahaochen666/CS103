@@ -17,11 +17,15 @@ std::vector<Intersection> Sphere::intersections(Ray &ray) {
     double discriminant{b * b - 4 * c};
     double distance_1 = -1;
     double distance_2 = -1;
+    std::vector<Intersection> out;
     if (discriminant >= 0) {
         distance_1 = (-b + sqrt(discriminant)) / 2;
         distance_2 = (-b - sqrt(discriminant)) / 2;
+        if (distance_1 == distance_2) {
+            return out;
+        }
     }
-    std::vector<Intersection> out;
+    //std::cout << ray.direction.pos_x << ray.direction.pos_y << ray.direction.pos_z << "\n";
     if (distance_1 > 0) {
         Point intersection1 = ray.start + ray.direction * distance_1;
         out.push_back(Intersection{this, distance_1, intersection1});

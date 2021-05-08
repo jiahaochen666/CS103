@@ -9,7 +9,6 @@
 
 class Plane: public Primitive {
 private:
-    Point point;
     Vector normal_vector;
     double distance;
 public:

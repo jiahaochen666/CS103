@@ -55,11 +55,12 @@ std::vector<std::vector<int>> Raytracer::to_raster(int resolution) {
             std::vector<Intersection> inter = this->scene->find_intersection(ray);
             int brightness = 0;
             if (!inter.empty()) {
+                //std::cout << inter[0].distance;
                 double distance = inter[0].distance;
                 distance = distance < 1 ? 1 : distance;
                 brightness =static_cast<int>(1 / sqrt(distance) * 255);
             }
-            out[x_pixel][y_pixel] = brightness;
+            out[y_pixel][x_pixel] = brightness;
         }
     }
     return out;
