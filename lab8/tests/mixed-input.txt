@@ -1,0 +1,14 @@
+RedRose 0 1
+BlueRose 2 3
+OrangeTulip 9 12
+YellowRose 3 5
+GreenRose 4 8
+RedTulip 3 7
+BlueTulip 2 3
+PurpleRose 11 12
+OrangeRose 5 9
+YellowTulip 3 5
+GreenTulip 2 5
+WhiteRose 9 10
+PurpleTulip 1 9
+WhiteTulip 9 10

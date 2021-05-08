@@ -1,0 +1,6 @@
+RedRose PurpleTulip WhiteTulip PurpleRose 
+BlueTulip RedTulip WhiteRose 
+BlueRose YellowTulip OrangeRose OrangeTulip 
+GreenTulip 
+YellowRose 
+GreenRose 

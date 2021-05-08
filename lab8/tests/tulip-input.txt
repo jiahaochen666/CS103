@@ -1,0 +1,7 @@
+RedTulip 3 7
+BlueTulip 2 3
+YellowTulip 3 5
+GreenTulip 2 5
+PurpleTulip 1 9
+WhiteTulip 9 10
+OrangeTulip 9 12
