@@ -1,0 +1,118 @@
+course => I&C SCI 31
+type => LEC
+days => TR
+start-time => 910
+duration => 80
+instructor => KLEFSTAD
+
+course => I&C SCI 31
+type => DIS
+days => W
+start-time => 910
+duration => 80
+instructor => KLEFSTAD
+
+course => MATH 2A
+type => LEC
+days => MWF
+start-time => 910
+duration => 50
+instructor => HSU
+
+course => WRITING 39A
+type => LEC
+days => MW
+start-time => 910
+duration => 110
+instructor => KIRTH
+
+course => I&C SCI 90
+type => LEC
+days => MW
+start-time => 910
+duration => 80
+instructor => HSU
+
+course => I&C SCI 90
+type => LAB1
+days => F
+start-time => 910
+duration => 50
+instructor => HSU
+
+course => I&C SCI 90
+type => LAB2
+days => F
+start-time => 910
+duration => 50
+instructor => HSU
+
+course => I&C SCI 90
+type => LAB3
+days => F
+start-time => 910
+duration => 50
+instructor => HSU
+
+course => I&C SCI 90
+type => LAB4
+days => F
+start-time => 910
+duration => 50
+instructor => HSU
+
+course => GE III
+type => LEC
+days => TR
+start-time => 910
+duration => 80
+instructor => BELLEVILLE
+
+course => MATH 2B
+type => LEC
+days => MWF
+start-time => 910
+duration => 80
+instructor => DEFAULT
+
+course => I&C SCI 32
+type => LEC
+days => TR
+start-time => 910
+duration => 80
+instructor => DEFAULT
+
+course => I&C SCI 32
+type => DIS
+days => M
+start-time => 910
+duration => 50
+instructor => KLEFSTAD
+
+course => I&C SCI 32
+type => LAB1
+days => W
+start-time => 910
+duration => 50
+instructor => KLEFSTAD
+
+course => I&C SCI 32
+type => LAB2
+days => W
+start-time => 910
+duration => 50
+instructor => KLEFSTAD
+
+course => I&C SCI 32
+type => LAB3
+days => W
+start-time => 910
+duration => 50
+instructor => KLEFSTAD
+
+course => I&C SCI 32
+type => LAB4
+days => W
+start-time => 910
+duration => 50
+instructor => KLEFSTAD

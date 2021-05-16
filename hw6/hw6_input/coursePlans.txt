@@ -1,0 +1,9 @@
+course => I&C SCI 31
+course => MATH 2A
+course => I&C SCI 90
+course => GE III
+
+course => I&C SCI 32
+course => MATH 2B
+course => WRITING 39A
+course => GE III

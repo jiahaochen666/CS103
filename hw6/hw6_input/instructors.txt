@@ -1,0 +1,19 @@
+instructor => DEFAULT
+start-time => 900
+end-time => 1700
+
+instructor => KLEFSTAD
+start-time => 900
+end-time => 1500
+
+instructor => HSU
+start-time => 1200
+end-time => 1700
+
+instructor => KIRTH
+start-time => 1200
+end-time => 1900
+
+instructor => BELLEVILLE
+start-time => 1600
+end-time => 2000
