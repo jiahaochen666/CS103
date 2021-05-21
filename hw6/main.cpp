@@ -141,27 +141,6 @@ bool move_time(int *time, const Instructor &instructor, int &duration) {
     return true;
 }
 
-
-vector<map<string, vector<CourseInfo>>> NEIGHBOR(map<string, vector<CourseInfo>> &schedule, int index) {
-    vector<map<string, vector<CourseInfo>>> neighbor;
-    int count = 0;
-    for (auto &it: schedule) {
-        for (int i = 0; i < it.second.size(); i++) {
-            if (count == index) {
-                int start = it.second[i].instructor.start + 10 - 30;
-                while (move_time(&start, it.second[i].instructor, it.second[i].duration)) {
-                    map<string, vector<CourseInfo>> temp = schedule;
-                    temp.at(it.first)[i].start = start;
-                    neighbor.push_back(temp);
-                }
-                break;
-            }
-            count++;
-        }
-    }
-    return neighbor;
-}
-
 bool days_conflict(const string &first, const string &second) {
     for (auto &c1:first) {
         for (auto &c2:second) {
@@ -196,19 +175,24 @@ map<string, std::vector<CourseInfo>> get_instructor(map<string, vector<CourseInf
     return out;
 }
 
-int EVAL(map<string, vector<CourseInfo>> &schedule) {
-    int conflict = 0;
+vector<pair<CourseInfo, CourseInfo>> course_conflict(map<string, vector<CourseInfo>> &schedule){
+    vector<pair<CourseInfo, CourseInfo>> conflict;
     for (auto &it: schedule) {
         for (int i = 0; i < it.second.size(); i++) {
             for (int j = i + 1; j < it.second.size(); j++) {
                 if (days_conflict(it.second[i].days, it.second[j].days)) {
                     if (time_conflict(it.second[i], it.second[j]) != 0) {
-                        conflict += time_conflict(it.second[i], it.second[j]);
+                        conflict.emplace_back(it.second[i], it.second[j]);
                     }
                 }
             }
         }
     }
+    return conflict;
+}
+
+vector<pair<CourseInfo, CourseInfo>> plan_conflict(map<string, vector<CourseInfo>> &schedule){
+    vector<pair<CourseInfo, CourseInfo>> conflict;
     for (auto &v: course_plan) {
         for (int i = 0; i < v.size(); i++) {
             vector<CourseInfo> course1 = schedule.at(v[i]);
@@ -217,26 +201,52 @@ int EVAL(map<string, vector<CourseInfo>> &schedule) {
                 for (auto &c1: course1) {
                     for (auto &c2: course2) {
                         if (days_conflict(c1.days, c2.days) && time_conflict(c1, c2) != 0)
-                            conflict += time_conflict(c1, c2);
+                            conflict.emplace_back(c1, c2);
                     }
                 }
-            }
-        }
-    }
-    map<string, std::vector<CourseInfo>> ins_to_course = get_instructor(schedule);
-    for (auto& ins: ins_to_course){
-        for (int i = 0; i < ins.second.size(); i++){
-            if (ins.second[i].start < ins.second[i].instructor.start || time_diff(ins.second[i].instructor.end, ins.second[i].start) < ins.second[i].duration + 10)
-                conflict++;
-            for (int j = i + 1; j < ins.second.size(); j++){
-                if (days_conflict(ins.second[i].days, ins.second[j].days) && time_conflict(ins.second[i], ins.second[j]) != 0)
-                    conflict += time_conflict(ins.second[i], ins.second[j]);
             }
         }
     }
     return conflict;
 }
 
+vector<pair<CourseInfo, CourseInfo>> ins_conflict(map<string, vector<CourseInfo>> &schedule){
+    vector<pair<CourseInfo, CourseInfo>> conflict;
+    map<string, std::vector<CourseInfo>> ins_to_course = get_instructor(schedule);
+    for (auto& ins: ins_to_course){
+        for (int i = 0; i < ins.second.size(); i++){
+            for (int j = i + 1; j < ins.second.size(); j++){
+                if (days_conflict(ins.second[i].days, ins.second[j].days) && time_conflict(ins.second[i], ins.second[j]) != 0)
+                    conflict.emplace_back(ins.second[i], ins.second[j]);
+            }
+        }
+    }
+    return conflict;
+}
+
+int EVAL(map<string, vector<CourseInfo>> &schedule) {
+    return course_conflict(schedule).size() + plan_conflict(schedule).size() + ins_conflict(schedule).size();
+}
+
+vector<map<string, vector<CourseInfo>>> NEIGHBOR(map<string, vector<CourseInfo>> &schedule, int index) {
+    vector<map<string, vector<CourseInfo>>> neighbor;
+    int count = 0;
+    for (auto &it: schedule) {
+        for (int i = 0; i < it.second.size(); i++) {
+            if (count == index) {
+                int start = it.second[i].instructor.start + 10 - 30;
+                while (move_time(&start, it.second[i].instructor, it.second[i].duration)) {
+                    map<string, vector<CourseInfo>> temp = schedule;
+                    temp.at(it.first)[i].start = start;
+                    neighbor.push_back(temp);
+                }
+                break;
+            }
+            count++;
+        }
+    }
+    return neighbor;
+}
 
 void initial(){
     for (auto& v: course_schedule){
@@ -250,8 +260,10 @@ void hill_climbing() {
     initial();
     map<string, vector<CourseInfo>> current_schedule = course_schedule;
     int currentVal = EVAL(current_schedule);
+    int counter = 0;
     while (currentVal != 0) {
-        cout << currentVal << endl;
+        int newVal = currentVal;
+        //cout << currentVal << endl;
         for (int i = 0; i < total; i++) {
             vector<map<string, vector<CourseInfo>>> neighbor = NEIGHBOR(current_schedule, i);
             for (auto &possibleNext: neighbor) {
@@ -261,6 +273,12 @@ void hill_climbing() {
                     currentVal = possibleVal;
                 }
             }
+            if (newVal == currentVal)
+                counter++;
+            else
+                counter = 0;
+            if (counter > 5)
+                break;
             if (currentVal == 0)
                 break;
         }
