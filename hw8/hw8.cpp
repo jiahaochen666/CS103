@@ -8,17 +8,15 @@ using namespace std;
 int solve_problem_1(const int *input_arr, const int size_of_input_arr) {
     // Note: size_of_input_arr is the size_of_cake here
     // Write your code for problem 1 here
-    if (size_of_input_arr == 0)
-        return 0;
-    else{
-        int heightest = 0;
-        for (int i = 1; i < size_of_input_arr + 1; i++){
-            int temp = solve_problem_1(input_arr, size_of_input_arr - i) + input_arr[i - 1];
-            if (temp > heightest)
-                heightest = temp;
-        }
-        return heightest;
+    int dp[size_of_input_arr + 1];
+    dp[0] = 0;
+    for (int i = 0; i <= size_of_input_arr; i++){
+        int max_val = 0;
+        for (int j = 0; j < i; j++)
+            max_val = max(max_val, input_arr[j] + dp[i - j - 1]);
+        dp[i] = max_val;
     }
+    return dp[size_of_input_arr];
 }
 
 int solve_problem_2(int capacity_of_firdging_box, const int *weights, const int *profit_scores,
@@ -40,8 +38,16 @@ int solve_problem_2(int capacity_of_firdging_box, const int *weights, const int 
 
 int solve_problem_3(const int *input_arr, const int size_of_input_arr, int size_of_cake) {
     // Write your code for problem 3 here
-
-    return 0;
+    int dp[size_of_cake + 1];
+    for (int i = 1; i < size_of_cake + 1; i++)
+        dp[i] = 0;
+    dp[0] = 1;
+    for (int i = 0; i < size_of_input_arr; i++){
+        for (int j = input_arr[i]; j <= size_of_cake; j++){
+            dp[j] += dp[j - input_arr[i]];
+        }
+    }
+    return dp[size_of_cake];
 }
 
 void convert_str_to_arr(string str, int **out_arr, int *size_of_out_arr) {
