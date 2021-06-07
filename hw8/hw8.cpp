@@ -10,7 +10,7 @@ int solve_problem_1(const int *input_arr, const int size_of_input_arr) {
     // Write your code for problem 1 here
     int dp[size_of_input_arr + 1];
     dp[0] = 0;
-    for (int i = 0; i <= size_of_input_arr; i++){
+    for (int i = 1; i <= size_of_input_arr; i++){
         int max_val = 0;
         for (int j = 0; j < i; j++)
             max_val = max(max_val, input_arr[j] + dp[i - j - 1]);
